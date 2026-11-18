@@ -11,7 +11,6 @@ Independent, experimental, command-line conversion tools for Motorola CPS2 `.xct
 | `xctb_to_foundry_csv.py` | Radio Foundry DM32UV six-file CSV ZIP | Channel frequencies/modes, tone, TX contact, RX groups, zones | CSV/ZIP structural tests passed; application import still needs a test for each source |
 | `xctb_to_cs_rdb.py` | CS711 RDB | TPL/CTCSS, DPL/DCS, DMR contact index, scan/roam indices, zones split at 16 | Known binary layout and comparison with a prior CPS-tested conversion passed |
 | `xctb_to_cs_rdb.py` | CS811 RDB | Above plus CPS-observed extended zones (blank-name 80-byte continuation pages) | Known binary layout and comparison with a prior CPS-tested conversion passed |
-| `xctb_to_cs_rdb.py` | CS801 RDB | Requires a genuine CS801 donor to even attempt; layout may differ | **NOT independently verified**; do not assume it works |
 | `xctb_to_hytera_rcdx.py` | PD782-format Hytera RCDX | Channels, contacts, scan, roam, all IP Multi-site Connect eligible members, auto-roam on roaming personalities, RX group, zones, Motorola Quick Call II two-tone contacts | Encrypted round-trip and independent table readback passed; new output requires CPS testing |
 
 **Other format from our research:** Motorola **CTB v1** (CPS1). A genuine, CPS1-importable XCTB → CTB v1 converter has **NOT** been completed. A research envelope is not an importable `.ctb`. This package deliberately does not claim otherwise. The included `motorola_decoder.py` reads CPS2 XCTB and CTB2; CTB2 is different from CTB v1.
