@@ -61,8 +61,6 @@ python xctb_to_cs_rdb.py SOURCE.xctb \
   --output converted_CS811.rdb
 ```
 
-The tool detects the donor model marker and refuses a mismatch. `--model CS801` is exposed for experimental testing with a genuine CS801 donor but **the CS801 binary layout has not been verified**. Do not treat CS811 compatibility as proof of CS801 compatibility.
-
 **Key field fixes included:** CTCSS/TPL vs DPL squelch type; all indexed DMR contacts and their TX refs; scan list member table and the real CPS-visible scan inventory beginning at `0x33500`; separate roaming inventory and member table; auto scan; 16-channel CS711 zone banks; and CS811 80-byte extended-zone continuation records.
 
 **Known omissions and caveats:** The source's Motorola Quick Call II two-tone definitions are not migrated to Connect Systems RDB. The donor's preexisting two-tone definitions and unrelated proprietary settings remain. Only one observed RX group table is supported; more than one RX group causes an error. Password-field positions that were identified are cleared, but unknown donor privacy settings/keys may remain. Inspect all key slots, power-on behavior, frequency bands and TX permissions after opening in CPS.
